@@ -3,9 +3,21 @@ const mongoose = require('mongoose');
 
 const AdminSchema = mongoose.Schema({
 
-    AdminName:String,
-    GmailAdmin:String,
-    Password:String,
+    AdminName:{
+        type: String,
+        required: true,
+        
+    },
+    GmailAdmin:{
+        type: String,
+        required: true,
+        
+    },
+    Password:{
+        type: String,
+        required: true,
+
+    },
    
     
 
