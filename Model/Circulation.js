@@ -3,7 +3,10 @@ const mongoose = require('mongoose');
 
 const CirculationSchema = mongoose.Schema({
 
-    Numero_Car:String,
+    Numero_Car:{
+        type: String,
+        required: true,
+    },
     
    
     

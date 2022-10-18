@@ -23,7 +23,13 @@ const VoyagesSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    Circulation : [{
+            type: String
+    }],
+    Hours_Circulation: [{
+            type: String
+    }],
 
 });
 
-module.exports = mongoose.model('Voyages', VoyagesSchema);d
+module.exports = mongoose.model('Voyages', VoyagesSchema);

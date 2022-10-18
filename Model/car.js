@@ -3,9 +3,18 @@ const mongoose = require('mongoose');
 
 const CarSchema = mongoose.Schema({
 
-    car:String,
-    chefeur:String,
-    Numero_Car:String,
+    car:{
+        type: String,
+        required: true,
+    },
+    chefeur:{
+        type: String,
+        required: true,
+    },
+    Numero_Car:{
+        type: String,
+        required: true,
+    },
    
     
 

@@ -1,14 +1,15 @@
 const express = require('express');
-
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv/config');
 const bodyParser = require('body-parser');
-
 const carRoute = require('./Controller/Car');
 const UserRoute = require('./Controller/user');
 const AdminRoute = require('./Controller/Admin');
 const VoyagesRoute = require('./Controller/Voyages');
+
+
+
 app.use(bodyParser.json());
 
 
@@ -24,16 +25,6 @@ app.get('/', (req, res) =>{
 res.send('welcome message');
 
 });
-
-
-app.get('/posts', (req, res) =>{
-
-    res.send('we are posts ');
-   
-    });
-
-
-
 
 
 //conect dbjj
