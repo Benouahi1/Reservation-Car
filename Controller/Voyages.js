@@ -30,18 +30,7 @@ router.get('/Cherche',async (req, res)=>{
     
   }
   
-  // const circl = Voyage[0].Circulation; 
-  // const h = Voyage[0].Hours_Circulation;
-  // const Prix = Voyage[0].Prix;
-  // for(let i = 0; i < circl.length; i++){
-  //   if(i == 0){
-  //     console.log(circl[i]+ ' ' + h[i])
-  //   }else{
-  //     console.log(circl[i]+ ' ' + h[i]+' '+Prix[i]+'.00 Dh'); 
-  //   }
-   
-  
-  // }
+ 
  try{
   res.json(Voyage);
  }catch(err){
@@ -50,10 +39,10 @@ router.get('/Cherche',async (req, res)=>{
  
  });
 
-router.get('/:VoyageId', async (req, res)=>{
+router.get('/:Numero_Car', async (req, res)=>{
   let i = 0
   try{
-    const Voyage = await  Voyages.find({_id:req.params.VoyageId})
+    const Voyage = await  Voyages.find({Numero_Car:req.params.Numero_Car})
     res.json(Voyage[0].Circulation[2]);
     const circl = Voyage[0].Circulation; 
     const h = Voyage[0].Hours_Circulation;
