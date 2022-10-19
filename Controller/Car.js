@@ -18,6 +18,18 @@ res.json(care);
   }
 });
 
+router.get('/:Numero', async (req, res)=>{
+  let i = 0
+  try{
+    const care = await  Car.find({Numero_Car:req.params.Numero})
+    res.json(care);
+
+    
+  }catch(err){
+    res.json({message: err});
+  }
+});
+
 
 router.post('/',async (req, res)=>{
  const care = new Car({

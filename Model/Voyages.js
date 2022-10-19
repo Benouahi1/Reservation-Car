@@ -11,24 +11,21 @@ const VoyagesSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    Ville_Depart:{
-        type: String,
-        required: true,
-    },
+   
     Date_depart:{
         type: Date,
         required: true,
     },
-    Hours : {
-        type: String,
-        required: true,
-    },
+    
     Circulation : [{
-            type: String
+            type: String,
     }],
-    Hours_Circulation: [{
-            type: String
+    Hours_Circulation : [{
+            type: String,
     }],
+    Prix : [{
+        type: String,
+}],
 
 });
 

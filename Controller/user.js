@@ -57,15 +57,21 @@ if(Email = 0){
 
 });
 
-router.get('/:Gmail/:Passworde',async(req, res)=>{
+router.post('/Login',async(req, res)=>{
+  const users = new User({
     
+    Gmail: req.body.Gmail,
+    Password: req.body.Password,
+
+ });
     try{ 
-    const user = await  User.find({Gmail:req.params.Gmail})
-        res.json(user);
      
-       const Passworde = req.params.Passworde;
-        if(Passworde==user[0].Password){
+      const usere = await  User.find({Gmail:req.body.Gmail})
+    console.log(req.body.Password);
+       const Passworde = req.body.Password;
+        if(Passworde==usere[0].Password){
           console.log("Welcome");
+          res.json(usere);
           }else{
             console.log("Password erour");
           }

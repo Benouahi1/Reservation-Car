@@ -7,7 +7,14 @@ const router = express.Router();
 
 const Admin = require('../Model/Admin');
 
-
+router.get('/', async (req, res)=>{
+  try{
+const Adminn = await Admin.find();
+res.json(Adminn);
+  }catch(err){
+    res.json({message: err});
+  }
+});
 
 router.get('/:AdminId', async (req, res)=>{
   try{

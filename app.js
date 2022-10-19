@@ -8,6 +8,12 @@ const UserRoute = require('./Controller/user');
 const AdminRoute = require('./Controller/Admin');
 const VoyagesRoute = require('./Controller/Voyages');
 
+//conect dbjj
+mongoose.connect(
+    process.env.DB_CONNECTION,
+{ useNewUrlParser: true },(req)=>
+console.log('database conection')
+)
 
 
 app.use(bodyParser.json());
@@ -27,12 +33,7 @@ res.send('welcome message');
 });
 
 
-//conect dbjj
-mongoose.connect(
-            process.env.DB_CONNECTION,
-        { useNewUrlParser: true },()=>
-        console.log('nnnn')
-)
+
 
 
 
