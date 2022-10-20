@@ -27,10 +27,23 @@ router.get('/Cherche',async (req, res)=>{
     
     console.log(Voyage[i].Circulation[j] +" "+ Voyage[i].Hours_Circulation[j] +" h");
    }
-    
+   let date = Voyage[i].Date_depart;
+   let NowDay = new Date();
+  if(date.getFullYear()> NowDay.getFullYear()){
+    if(date.getMonth()>NowDay.getMonth()){
+ if(date.getDate()<NowDay.getDate()){
+  console.log("Car deja envoyer");
+  console.log(" ")
+ }else{
+  console.log("Reserver " )
+  console.log(" " )
+ }
   }
+}
+}
+
   
- 
+  
  try{
   res.json(Voyage);
  }catch(err){
