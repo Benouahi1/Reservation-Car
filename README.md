@@ -6,10 +6,10 @@
  
  
  <p>Sur Backend Projet Reservation de car de multi profile </br>
- Express Node-js
+ Express Node-js MongoDb
  </p>
  </br>
-Cree APi
+ APi d'occasion
 </br>
 Get : localhost:3000/Voyages/12345-B-1 
 </br>
