@@ -3,23 +3,23 @@ const mongoose = require('mongoose');
 
 const ReserveSchema = mongoose.Schema({
 
-    Nom_Utilisateur: {
+    NomUtilisateur: {
         type: String,
         required: true,
     },
-    Numero_Car:{
+    NumeroCar:{
         type: String,
         required: true,
     },
-    ville_Depare:{
+    villeDepare:{
         type: String,
         required: true,
     },
-    Date_depart:{
+    DateDepart:{
         type: Date,
         required: true,
     },
-    hours_Depart:{
+    hoursDepart:{
         type: String,
         required: true,
     },
@@ -27,7 +27,7 @@ const ReserveSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    ville_Collections:{
+    villeCollections:{
         type : String,
         required: true,
     },

@@ -31,7 +31,7 @@ router.get('/:Numero', async (req, res)=>{
 });
 
 
-router.post('/',async (req, res)=>{
+router.post('/Add',async (req, res)=>{
  const care = new Car({
     car: req.body.car,
     chefeur: req.body.chefeur,

@@ -16,17 +16,10 @@ res.json(Adminn);
   }
 });
 
-router.get('/:AdminId', async (req, res)=>{
-  try{
-    const Adminn = await  Admin.find({_id:req.params.AdminId})
-    res.json(Adminn);
-  }catch(err){
-    res.json({message: err});
-  }
-});
 
 
-router.post('/',async (req, res)=>{
+
+router.post('/Add',async (req, res)=>{
  const admin = new Admin({
     AdminName: req.body.AdminName,
     GmailAdmin: req.body.GmailAdmin,

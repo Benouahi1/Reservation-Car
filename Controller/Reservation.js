@@ -11,8 +11,8 @@ const Reserve = require('../Model/Reservation');
 
 router.get('/', async (req, res)=>{
   try{
-const Voyer = await Reserve.find();
-res.json(Voyer);
+const Reserver = await Reserve.find();
+res.json(Reserver);
   }catch(err){
     res.json({message: err});
   }
@@ -22,6 +22,8 @@ router.get('/:ReserveId', async (req, res)=>{
   let i = 0
   try{
     const Reserver = await  Reserve.find({_id:req.params.ReserveId})
+    
+    
     res.json(Reserver);
 
     
@@ -32,20 +34,28 @@ router.get('/:ReserveId', async (req, res)=>{
 
 
 router.post('/Add', async (req, res)=>{
- const Reserver = new Reserve({
-    Nom_Utilisateur: req.body.Nom_Utilisateur,
-    Numero_Car: req.body.Numero_Car,
-    ville_Depare: req.body.ville_Depare,
-    Date_depart: req.body.Date_depart,
-    hours_Depart: req.body.hours_Depart,
-    Prix: req.body.Prix,
-    ville_Collections: req.body.ville_Collections,
- });
-
-
-try{
+   
+    
+    
+    try{
+    const Reserver = new Reserve({
+       NomUtilisateur: req.body.NomUtilisateur,
+       NumeroCar: req.body.NumeroCar,
+       villeDepare: req.body.villeDepare,
+       DateDepart: req.body.DateDepart,
+       hoursDepart: req.body.hoursDepart,
+       Prix: req.body.Prix,
+       villeCollections: req.body.villeCollections,
+    });
+    const Reserverid = await  Reserve.find({NumeroCar:req.body.NumeroCar})
+   
+    if(Reserverid.length > 50) {
+   console.log("Car errour");
+   }else{
+    console.log(Reserverid.length+1);
     const savedReserver = await Reserver.save();
     res.json(savedReserver);
+   }
 }catch(err){
     res.json({message: err});
 }
