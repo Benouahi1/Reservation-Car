@@ -17,6 +17,26 @@ install: npm i nodemon
  </br>
  </br>
  MongoDb : telecharger mongodb sur site oficielle  www.mongoDb.com
+ 
+ </br>
+ Create schema
+const mongoose = require('mongoose');
+
+const AdminSchema = mongoose.Schema({objet})
+module.exports = mongoose.model('Admin',AdminSchema) 
+objet=   name : {
+        type : String,
+        required: true
+    },
+    email : {
+        type : String,
+        required: true
+    },
+    token : {
+        type : String,
+        required: true
+    }
+ 
  </p>
  </br>
  APi d'occasion
