@@ -6,7 +6,11 @@
  
  
  <p>Sur Backend Projet Reservation de car de multi profile </br>
- Express Node-js MongoDb
+ Express Node-js
+ </br>
+ install :   $ npm install express --save
+ </br>
+ MongoDb : telecharger mongodb sur site oficielle  www.mongoDb.com
  </p>
  </br>
  APi d'occasion
