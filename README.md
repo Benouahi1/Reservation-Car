@@ -6,7 +6,25 @@
  
  
  <p>Sur Backend Projet Reservation de car de multi profile </br>
- Express Node-js MongoDb
+ Express.js:Express fournit des méthodes pour spécifier quelle fonction est appelée pour une méthode HTTP particulière (GET, POST, SET, etc.) et un modèle d'URL ("Route"), ainsi que des méthodes pour spécifier quel moteur de rendu de vues ("view") est utilisé,
+ </br>
+ install :   $ npm install express --save
+ </br>
+</br>
+ installer nodeman sur nodemon est un outil qui permet de développer des applications basées sur Node.js en redémarrant automatiquement l'application de nœud lorsque des modifications de fichiers dans le répertoire sont détectées. 
+ </br>
+install: npm i nodemon
+ </br>
+ </br>
+ MongoDb : telecharger mongodb sur site oficielle  www.mongoDb.com
+ 
+ </br>
+ Create schema
+const mongoose = require('mongoose');
+
+const AdminSchema = mongoose.Schema({objet})
+module.exports = mongoose.model('Admin',AdminSchema) 
+ 
  </p>
  </br>
  APi d'occasion
