@@ -70,8 +70,10 @@ router.post('/Login',async(req, res)=>{
     console.log(req.body.Password);
        const Passworde = req.body.Password;
         if(Passworde==usere[0].Password){
+          
           console.log("Welcome");
           res.json(usere);
+         
           }else{
             console.log("Password erour");
           }
