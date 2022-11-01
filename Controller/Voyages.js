@@ -19,28 +19,30 @@ res.json(Voyer);
 });
 
 router.get('/Cherche',async (req, res)=>{
-  const Voyage = await  Voyages.find()
+  const Voyage = await  Voyages.find().select('Circulation Hours_Circulation Prix');
+
+  // var Voyer = new table();
+//   for (let i = 0; i < Voyage.length; i++) {
+//    let Num = Voyage[i].Circulation.length;
+   
+//    for (let j = 0; j < Num-1; j++) {
+//     // Voyer[i][j]=Voyage[i].Circulation[j] +" "+ Voyage[i].Hours_Circulation[j] +" h" + Voyage[i].Prix[j];
+//     console.log(Voyage[i].Circulation[j] +" "+ Voyage[i].Hours_Circulation[j] +" h");
+//    }
+//    let date = Voyage[i].Date_depart;
+//    let NowDay = new Date();
+//   if(date.getFullYear()> NowDay.getFullYear()){
+//     if(date.getMonth()>NowDay.getMonth()){
+//  if(date.getDate()<NowDay.getDate()){
+//   console.log("Car deja envoyer");
+//  }else{
+//   console.log("Reserver " )
   
-  for (let i = 0; i < Voyage.length; i++) {
-   let Num = Voyage[i].Circulation.length;
-   for (let j = 0; j < Num-1; j++) {
-    
-    console.log(Voyage[i].Circulation[j] +" "+ Voyage[i].Hours_Circulation[j] +" h");
-   }
-   let date = Voyage[i].Date_depart;
-   let NowDay = new Date();
-  if(date.getFullYear()> NowDay.getFullYear()){
-    if(date.getMonth()>NowDay.getMonth()){
- if(date.getDate()<NowDay.getDate()){
-  console.log("Car deja envoyer");
-  console.log(" ")
- }else{
-  console.log("Reserver " )
-  console.log(" " )
- }
-  }
-}
-}
+//  }
+//   }
+// }
+// }
+
 
   
   
@@ -52,11 +54,12 @@ router.get('/Cherche',async (req, res)=>{
  
  });
 
-router.get('/:Numero_Car', async (req, res)=>{
+router.get('/:Ville', async (req, res)=>{
   let i = 0
   try{
-    const Voyage = await  Voyages.find({Numero_Car:req.params.Numero_Car})
-    res.json(Voyage[0].Circulation[2]);
+    const Voyage = await  Voyages.find({Circulation:req.params.Ville})
+    res.json(Voyage[0]);
+    
     const circl = Voyage[0].Circulation; 
     const h = Voyage[0].Hours_Circulation;
     const Prix = Voyage[0].Prix;

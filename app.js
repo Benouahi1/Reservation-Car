@@ -8,7 +8,7 @@ const UserRoute = require('./Controller/user');
 const AdminRoute = require('./Controller/Admin');
 const VoyagesRoute = require('./Controller/Voyages');
 const ReservationRoute = require('./Controller/Reservation');
-
+const cors = require('cors')
 //conect dbjj
 mongoose.connect(
     process.env.DB_CONNECTION,
@@ -19,7 +19,7 @@ console.log('database conection')
 
 app.use(bodyParser.json());
 
-
+app.use(cors());
 app.use('/Voyages',VoyagesRoute);
 app.use('/Car',carRoute);
 app.use('/User',UserRoute);
@@ -51,6 +51,6 @@ res.send('welcome message');
 
 
 
-app.listen(3000);
+app.listen(5000);
 
 

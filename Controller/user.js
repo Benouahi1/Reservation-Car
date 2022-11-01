@@ -44,7 +44,7 @@ try{
     Email = Email+ 0;
   }
 });
-if(Email = 0){
+if(Email == 0){
   const savedUser = await user.save();
   res.json(savedUser);
 }else{
